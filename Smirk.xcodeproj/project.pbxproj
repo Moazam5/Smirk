@@ -13,6 +13,8 @@
 		5966F29F25C4F87A004C2AF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5966F29E25C4F87A004C2AF6 /* Preview Assets.xcassets */; };
 		5966F2AA25C4F87A004C2AF6 /* SmirkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F2A925C4F87A004C2AF6 /* SmirkTests.swift */; };
 		5966F2B525C4F87A004C2AF6 /* SmirkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F2B425C4F87A004C2AF6 /* SmirkUITests.swift */; };
+		59F2B11D25C5F8FC009CC9AF /* CaptureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2B11C25C5F8FC009CC9AF /* CaptureImageView.swift */; };
+		59F2B12225C5F966009CC9AF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2B12125C5F966009CC9AF /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		5966F2B025C4F87A004C2AF6 /* SmirkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmirkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5966F2B425C4F87A004C2AF6 /* SmirkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmirkUITests.swift; sourceTree = "<group>"; };
 		5966F2B625C4F87A004C2AF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F2B11C25C5F8FC009CC9AF /* CaptureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageView.swift; sourceTree = "<group>"; };
+		59F2B12125C5F966009CC9AF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				5966F29725C4F873004C2AF6 /* SmirkApp.swift */,
-				5966F29925C4F873004C2AF6 /* ContentView.swift */,
+				59F2B12625C606F0009CC9AF /* Onboarding */,
 				5966F29B25C4F87A004C2AF6 /* Assets.xcassets */,
 				5966F2A025C4F87A004C2AF6 /* Info.plist */,
 				5966F29D25C4F87A004C2AF6 /* Preview Content */,
@@ -128,6 +132,16 @@
 				5966F2B625C4F87A004C2AF6 /* Info.plist */,
 			);
 			path = SmirkUITests;
+			sourceTree = "<group>";
+		};
+		59F2B12625C606F0009CC9AF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5966F29925C4F873004C2AF6 /* ContentView.swift */,
+				59F2B11C25C5F8FC009CC9AF /* CaptureImageView.swift */,
+				59F2B12125C5F966009CC9AF /* Coordinator.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F2B12225C5F966009CC9AF /* Coordinator.swift in Sources */,
 				5966F29A25C4F873004C2AF6 /* ContentView.swift in Sources */,
 				5966F29825C4F873004C2AF6 /* SmirkApp.swift in Sources */,
+				59F2B11D25C5F8FC009CC9AF /* CaptureImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
