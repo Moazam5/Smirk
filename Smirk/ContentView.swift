@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
+    @State var cameraClicked: Bool = false
+
     var body: some View {
         
         VStack(alignment : .center) {
@@ -43,7 +46,33 @@ struct ContentView: View {
                 .shadow(color: .init(.sRGB, white: 0, opacity: 0.20), radius: 4, x: 0, y: 4)
                 .padding()
 
-                Button(action: {}) {
+                Button(action: {
+                    
+                    let cameraMediaType = AVMediaType.video
+                    let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
+
+                    switch cameraAuthorizationStatus {
+                    case .denied:
+                        return
+                    case .authorized:
+                        self.cameraClicked.toggle()
+                    case .restricted:
+                        return //(Need to send users to settings page of app)
+
+                    case .notDetermined:
+                        // Prompting user for the permission to use the camera.
+                        AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                            if granted {
+                                print("Granted access to \(cameraMediaType)")
+                            } else {
+                                print("Denied access to \(cameraMediaType)")
+                            }
+                        }
+                    @unknown default:
+                        NSLog("unkown camera authorization state error")
+                        return
+                    }
+                }) {
                     Text("Photobooth Only")
                 }
                 .frame(width: 300, height: 80, alignment: .center)
