@@ -24,7 +24,7 @@ extension CaptureImageView: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         //change this to camera for future use
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
         return picker
     }
     
