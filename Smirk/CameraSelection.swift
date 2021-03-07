@@ -16,16 +16,14 @@ struct CameraSelection: View {
     var body: some View {
         VStack {
             ZStack{
-                //ProgressView(value: 0.25)
-                Divider().frame(width: 200, alignment: .center)
-                    .background(Color.white)
+                
                 HStack{
                     Text("Setup Photo")
                     .padding()
 
                     .background(Color.white)
                     .cornerRadius(30)
-                    Divider().frame(width: 300, height: 3, alignment: .center)
+                    Divider().frame(width: 350, height: 3, alignment: .center)
                         .background(Color.white)
                    // Spacer()
                     
@@ -35,19 +33,55 @@ struct CameraSelection: View {
                         .padding()
                         .overlay(
                                RoundedRectangle(cornerRadius: 30)
-                                   .stroke(Color.white, lineWidth: 6)
-                           )
+                                   .stroke(Color.white, lineWidth: 6) )
                        
                 }
-                
+                }
+
+       //TODO: Add more space here
+
+            HStack{
+                VStack{
+                    Text("Choose a logo to print")
                     
+                    Text("Select file below")
+                        .font(.system(size: 15))
+                    
+                    Button("") {
+                        
+                    }
+                    .frame(width: 300, height: 300, alignment: .leading)
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .shadow(color: .init(.sRGB, white: 0, opacity: 0.20), radius: 4, x: 0, y: 4)
+                    .padding()
+                    
+                }
+              
+                Spacer()
+                VStack{
+                    Text("Choose an advertisement")
+                    Text("Select file below")
+                        .font(.system(size: 15))
+                    
+                    Button("") {
+                        
+                    }
+                    .frame(width: 300, height: 300, alignment: .leading)
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .shadow(color: .init(.sRGB, white: 0, opacity: 0.20), radius: 4, x: 0, y: 4)
+                    .padding()
+                }
               
 
             }
+            .font(.system(size: 20))
+            .foregroundColor(Color.white)
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     
-    //    .progressViewStyle(DarkBlueShadowProgressViewStyle())
         .background(LinearGradient(gradient: Gradient(colors: [.white, .blue]), startPoint: .top, endPoint: .bottom))
         .ignoresSafeArea()
         
@@ -55,13 +89,8 @@ struct CameraSelection: View {
     
     }
 
-struct DarkBlueShadowProgressViewStyle: ProgressViewStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        ProgressView(configuration)
-            .shadow(color: Color(red: 0, green: 0, blue: 0.6),
-                    radius: 4.0, x: 1.0, y: 2.0)
-    }
-}
+
+
 struct CameraSelection_Previews: PreviewProvider {
     static var previews: some View {
         CameraSelection()
