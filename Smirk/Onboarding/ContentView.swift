@@ -88,7 +88,7 @@ struct ContentView: View {
                 .cornerRadius(12)
                 .shadow(color: .init(.sRGB, white: 0, opacity: 0.20), radius: 4, x: 0, y: 4)
                 .sheet(isPresented: self.$cameraClicked){
-                    CameraSelection()
+                    FirstPhotoboothView()
                 }
                         
 //                        self.$showCaptureImageView) {
