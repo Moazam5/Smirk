@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-struct CameraSelection: View {
-    @State private var downloadAmount = 0.0
-   // let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-
-    @State var showPV = true
-    
+struct FirstPhotoboothView: View {
+   
     var body: some View {
         VStack {
+            Spacer()
             ZStack{
                 
                 HStack{
@@ -38,8 +35,7 @@ struct CameraSelection: View {
                 }
                 }
 
-       //TODO: Add more space here
-
+            Spacer()
             HStack{
                 VStack{
                     Text("Choose a logo to print")
@@ -78,11 +74,29 @@ struct CameraSelection: View {
             }
             .font(.system(size: 20))
             .foregroundColor(Color.white)
+            
+            Spacer()
+            
+            VStack{
+                HStack
+                {
+                    Spacer()
+                    Button("Next") {
+                        print("Next button pressed")
+                    }
+                    .frame(width: 150, height: 50, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .padding(.bottom,50)
+                    
+                }
+            }
+        
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-    
-        .background(LinearGradient(gradient: Gradient(colors: [.white, .blue]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [.white, .blue]),
+                                   startPoint: .top, endPoint: .bottom))
         .ignoresSafeArea()
         
     }
@@ -93,6 +107,6 @@ struct CameraSelection: View {
 
 struct CameraSelection_Previews: PreviewProvider {
     static var previews: some View {
-        CameraSelection()
+        FirstPhotoboothView()
     }
 }
