@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct FirstPhotoboothView: View {
+    @State var completeSetup = false
    
+    fileprivate func extractedFunc() -> Text {
+        return Text("Choose a logo to print")
+    }
+    
     var body: some View {
+        NavigationView{
+            
+        
         VStack {
             Spacer()
             ZStack{
@@ -38,13 +46,12 @@ struct FirstPhotoboothView: View {
             Spacer()
             HStack{
                 VStack{
-                    Text("Choose a logo to print")
+                    extractedFunc()
                     
                     Text("Select file below")
                         .font(.system(size: 15))
                     
                     Button("") {
-                        
                     }
                     .frame(width: 300, height: 300, alignment: .leading)
                     .background(Color.white)
@@ -82,7 +89,12 @@ struct FirstPhotoboothView: View {
                 {
                     Spacer()
                     Button("Next") {
+                        completeSetup.toggle()
+
                         print("Next button pressed")
+                    }
+                    .sheet(isPresented: $completeSetup) {
+                        SecondPhotoboothView()
                     }
                     .frame(width: 150, height: 50, alignment: .center)
                     .background(Color.white)
@@ -96,9 +108,10 @@ struct FirstPhotoboothView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [.white, .blue]),
-                                   startPoint: .top, endPoint: .bottom))
+            startPoint: .top, endPoint: .bottom))
         .ignoresSafeArea()
         
+        }
     }
     
     }
